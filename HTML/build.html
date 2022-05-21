@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <script src="nav.js" defer></script>
-        <script src="build.js" defer></script>
+        <script type="module" src="build.js" defer></script>
     </head>
 
     <body>
@@ -20,7 +20,7 @@
         </nav>
 
         <main style="margin-top: 120px;">
-            <form class="form">
+            <form class="form" action="/confirmation.html" method="POST">
                 <table>
                     <tr>
                         <td>
@@ -73,28 +73,28 @@
                             <label for="time">How soon are you looking to purchase this PC build?<span style="color: red;">*</span></label><br>
                             <select id="time" name="time">
                                 <option value="empty">Select</option>
-                                <option value="today">I'm ready to buy today</option>
-                                <option value="weeks">The next 2 weeks</option>
-                                <option value="months">Over a month out</option>
+                                <option value="Ready to buy today">I'm ready to buy today</option>
+                                <option value="The next 2 weeks">The next 2 weeks</option>
+                                <option value="Over a month out">Over a month out</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="3">
                             <label for="plan">What do you plan on using this PC for?<span style="color: red;">*</span></label><br>
-                            <input type="checkbox" id="game" name="game" value="game">
+                            <input type="checkbox" id="game" name="game">
                             <label for="game"> I just want to Game - Give me Frames!</label><br>
-                            <input type="checkbox" id="gamenstream" name="gamenstream" value="gamenstream">
+                            <input type="checkbox" id="gamenstream" name="gamenstream">
                             <label for="gamenstream"> I want to Game & Stream at the same time</label><br>
-                            <input type="checkbox" id="stream" name="stream" value="stream">
+                            <input type="checkbox" id="stream" name="stream">
                             <label for="stream"> Stream PC (Using it to broadcast another PC's Gameplay)</label><br>
-                            <input type="checkbox" id="video" name="video" value="video">
+                            <input type="checkbox" id="video" name="video">
                             <label for="video"> I want to Edit Video or do Graphic Design</label><br>
-                            <input type="checkbox" id="business" name="business" value="business">
+                            <input type="checkbox" id="business" name="business">
                             <label for="business"> This is a Business Workstation PC</label><br>
-                            <input type="checkbox" id="family" name="family" value="family">
+                            <input type="checkbox" id="family" name="family">
                             <label for="family"> This is going to be our Family PC</label><br>
-                            <input type="checkbox" id="audio" name="audio" value="audio">
+                            <input type="checkbox" id="audio" name="audio">
                             <label for="audio"> I want this PC for Audio Editing</label>
                         </td>
                     </tr>
@@ -138,7 +138,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <button id="submit">Submit Build Quote Request</button>
+                            <button type="submit" id="submit">Submit Build Quote Request</button>
                         </td>
                     </tr>
                 </table>

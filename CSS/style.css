@@ -49,16 +49,18 @@ body {
     position: fixed;
     background-image: url("homeBg.jpg");
     width: auto;
-    height: 1080px;
-    top: 120px;
+    height: 100%;
     left: 0;
     right: 0;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .intro {
-    width: 500px;
-    margin: auto;
+    width: 700px;
     text-align: center;
     color: rgb(255, 255, 255);
 }
@@ -98,6 +100,7 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    font-family: 'Plateia', sans-serif;
 }
 
 .form button:focus {
@@ -296,6 +299,7 @@ body {
     overflow: hidden;
     width: 350px;
     margin: 20px;
+    background: white;
 }
 
 .card-header {
@@ -309,7 +313,6 @@ body {
 }
 
 .card-content {
-    background: white;
     padding: 30px;
 }
 

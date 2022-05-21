@@ -38,8 +38,7 @@ const comment = document.getElementById('comment')
 const toasts = document.getElementById('toasts')
 
 submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    validation = 0
+    let validation = 0
     if(!isFnameValid(fname.value)) {
         const fnameNotif = document.createElement('div')
         fnameNotif.classList.add('toast')
@@ -151,70 +150,69 @@ submit.addEventListener('click', (e) => {
     } else validation++
     if(validation >= 12) {
         const inputs = {
-            "fname": fname.value,
-            "lname": lname.value,
-            "email": email.value,
-            "phone": phone.value,
-            "address": address.value,
-            "city": city.value,
-            "state": state.value,
-            "zip": zip.value,
-            "budget": budget.value,
-            "time": time.value,
-            "gaming": game.checked,
-            "streaming": stream.checked,
-            "gamingAndStreaming": gamenstream.checked,
-            "videoEditing": video.checked,
-            "forBusiness": business.checked,
-            "forFamily": family.checked,
-            "audioEditing": audio.checked,
-            "gameList": gameList.value,
-            "bluetooth": bluetooth.checked,
-            "wifi": wifi.checked,
-            "comment": comment.value
+            fname: fname.value,
+            lname: lname.value,
+            email: email.value,
+            phone: phone.value,
+            address: address.value,
+            city: city.value,
+            state: state.value,
+            zip: zip.value,
+            budget: budget.value,
+            time: time.value,
+            gaming: game.checked,
+            streaming: stream.checked,
+            gamingAndStreaming: gamenstream.checked,
+            videoEditing: video.checked,
+            forBusiness: business.checked,
+            forFamily: family.checked,
+            audioEditing: audio.checked,
+            gameList: gameList.value,
+            bluetooth: bluetooth.checked,
+            wifi: wifi.checked,
+            comment: comment.value
         }
-        submitData(inputs)
-    }
+    } else e.preventDefault()
 })
 
 function isFnameValid(fname) {
     if(fname.length == 0) return false
-    re = /^[a-z ,.'-]+$/i
+    const re = /^[a-z ,.'-]+$/i
     return re.test(fname)
 }
 function isLnameValid(lname) {
     if(lname.length == 0) return false
-    re = /^[a-z ,.'-]+$/i
+    const re = /^[a-z ,.'-]+$/i
     return re.test(lname)
 }
 function isEmailValid(email) {
     if(email.length == 0) return false
-    re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     return re.test(email)
 }
 function isPhoneValid(phone) {
     if(phone.length == 0) return false
-    re = /^\d{10}$/
+    const re = /^\d{10}$/
     return re.test(phone)
 }
 function isAddressValid(address) {
     if(address.length == 0) return false
-    re = /^(?:[Pp][Oo]\s[Bb][Oo][Xx]|[0-9]+)\s(?:[0-9A-Za-z\.'#]|[^\S\r\n])+/
+    const re = /^(?:[Pp][Oo]\s[Bb][Oo][Xx]|[0-9]+)\s(?:[0-9A-Za-z\.'#]|[^\S\r\n])+/
     return re.test(address)
 }
 function isCityValid(city) {
     if(city.length == 0) return false
-    re = /^[a-zA-Z',.\s-]{1,25}$/
+    const re = /^[a-zA-Z',.\s-]{1,25}$/
     return re.test(city)
 }
 function isStateValid(state) {
     if(state.length == 0) return false
-    re = /[A-Z]{2}/
+    const re = /[A-Z]{2}/
     return re.test(state)
 }
 function isZipValid(zip) {
     if(zip.length == 0) return false
-    re = /[0-9]{5}/
+    const re = /[0-9]{5}/
     return re.test(zip)
 }
 function isBudgetValid(budget) {
@@ -251,14 +249,4 @@ function isRequirementChosen(bluetooth, wifi, nowifibt) {
         return false
     else
         return true
-}
-
-function submitData(inputs) {
-    // const fs = require('fs')
-    // const data = JSON.stringify(inputs)
-    // fs.writeFile('../Data/requests.json', data, (err) => {
-    //     if(err) {
-    //         console.log(err)
-    //     }
-    // })
 }
